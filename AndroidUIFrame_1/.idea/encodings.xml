@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/BaseItemModel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/BaseListAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/BaseModelManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/IModelManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/ItemEntity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/ItemEntityCreator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/ModelListAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/ModelManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/ModelManagerBuilder.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/aa/AAModelManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/recycler/BaseRecyclerAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/recycler/ModelRecyclerAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/recycler/ModelViewHolder.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/viewpager/ModelPagerAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/multiplemodel/viewpager/PagerModelManager.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/util/L.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/util/Request.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/util/RequestCache.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/devking/android/frame1/app/util/ToolUtils.java" charset="UTF-8" />
+  </component>
+</project>
+

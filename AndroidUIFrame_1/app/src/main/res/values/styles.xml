@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!--toolbar_color-->
+        <item name="colorPrimary">@color/color_primary</item>
+        <!--状态栏_color-->
+        <item name="colorPrimaryDark">@color/color_primary</item>
+        <!--window_color-->
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+</resources>

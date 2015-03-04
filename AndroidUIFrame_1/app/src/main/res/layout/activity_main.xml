@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <github.chenupt.dragtoplayout.DragTopLayout
+                android:id="@+id/drag_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimary"
+                app:dtlCollapseOffset="?attr/actionBarSize"
+                app:dtlOpen="true"
+                app:dtlOverDrag="false">
+
+                <LinearLayout
+                    android:id="@+id/top_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="This is Top View"
+                        android:textSize="18sp" />
+
+                    <!--<ImageView
+                        android:id="@+id/image_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/ic_launcher" />-->
+                    <it.gmariotti.cardslib.library.view.CardViewNative
+                        android:id="@+id/carddemo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginTop="12dp"/>
+                </LinearLayout>
+
+                <!--内容界面-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.astuetz.PagerSlidingTabStrip
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="?attr/colorPrimary"
+                        android:fillViewport="false"
+                        android:textColor="@color/white"
+                        app:pstsIndicatorColor="@color/white"
+                        app:pstsShouldExpand="true"
+                        app:pstsIndicatorHeight="4dp">
+
+                    </com.astuetz.PagerSlidingTabStrip>
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/pager"
+                        android:background="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.v4.view.ViewPager>
+                </LinearLayout>
+            </github.chenupt.dragtoplayout.DragTopLayout>
+
+            <LinearLayout
+                android:id="@+id/drawer_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@drawable/drawer"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </android.support.v4.widget.DrawerLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
