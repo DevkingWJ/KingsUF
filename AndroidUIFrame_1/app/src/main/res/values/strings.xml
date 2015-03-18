@@ -8,4 +8,13 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
+    <!--ListView Strings-->
+    <string-array name="list_title">
+        <item>房产</item>
+        <item>物业</item>
+        <item>生活</item>
+        <item>title_4</item>
+        <item>title_5</item>
+    </string-array>
+
 </resources>

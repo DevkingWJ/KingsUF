@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="AppTheme.Base">
         <!-- Customize your theme here. -->
     </style>
+
     <style name="AppTheme.Base" parent="Theme.AppCompat">
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
@@ -14,6 +15,25 @@
         <item name="colorPrimaryDark">@color/color_primary</item>
         <!--window_color-->
         <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!-- Dialog背景透明 -->
+    <style name="transparentDialog" parent="android:style/Theme.Dialog">
+
+        <!-- 设置自定义布局的背景透明 -->
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 设置window背景透明，也就是去边框 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="Mydialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
 </resources>

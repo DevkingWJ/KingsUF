@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.2'
+        classpath 'com.android.tools.build:gradle:1.0.0'
     }
 }
 apply plugin: 'com.android.application'
@@ -25,7 +25,7 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -38,7 +38,6 @@ dependencies {
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     //dragtoplayout
     compile 'com.github.chenupt.android:dragtoplayout:1.0.2@aar'
-    //multiplemodel
     //eventbus
     compile 'de.greenrobot:eventbus:2.4.0'
     //google guava
@@ -55,4 +54,6 @@ dependencies {
     compile 'com.github.gabrielemariotti.cards:cardslib-extra-staggeredgrid:2.0.1'
     //Optional for drag and drop
     compile 'com.github.gabrielemariotti.cards:cardslib-extra-dragdrop:2.0.1'
+    //ShapeImageView
+    compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
 }

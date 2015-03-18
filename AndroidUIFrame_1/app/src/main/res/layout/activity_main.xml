@@ -92,14 +92,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
-                android:background="@drawable/drawer"
                 android:clickable="true"
-                android:orientation="vertical"
-                android:padding="8dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                android:orientation="vertical">
+                <include layout="@layout/layout_listview"/>
             </LinearLayout>
         </android.support.v4.widget.DrawerLayout>
 

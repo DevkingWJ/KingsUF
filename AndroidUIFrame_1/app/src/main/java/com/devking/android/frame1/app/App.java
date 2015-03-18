@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import com.devking.android.frame1.app.util.L;
 import com.devking.android.frame1.app.util.Request;
+import com.devking.android.frame1.app.util.T;
 import com.devking.android.frame1.app.util.ToolUtils;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.DbUtils;
@@ -21,7 +22,7 @@ public class App extends Application{
     private DbUtils mDataBase;
     private BitmapUtils mBitmapUtils;
     private Request mRequest;
-    public  static String DIRECTORY_PATH = ToolUtils.getExternalStoragePath()
+    public  static String DIRECTORY_PATH = T.getExternalStoragePath()
             + File.separator;
     private boolean isWifiEnv = false;//是否为wifi连接
 
@@ -45,7 +46,7 @@ public class App extends Application{
                 L.e("create files failed!!");
             }
         }
-        setWifiEnv(ToolUtils.wifiIsConnected());
+        setWifiEnv(T.wifiIsConnected());
     }
     public boolean isWifiEnv() {
         return isWifiEnv;

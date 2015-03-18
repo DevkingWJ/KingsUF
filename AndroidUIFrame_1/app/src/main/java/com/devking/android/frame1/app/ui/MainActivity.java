@@ -8,11 +8,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.*;
 import com.astuetz.PagerSlidingTabStrip;
 import com.devking.android.frame1.app.R;
 import com.devking.android.frame1.app.multiplemodel.viewpager.ModelPagerAdapter;
 import com.devking.android.frame1.app.multiplemodel.viewpager.PagerModelManager;
+import com.devking.android.frame1.app.util.L;
+import com.github.siyamed.shapeimageview.CircularImageView;
+import com.github.siyamed.shapeimageview.ShapeImageView;
 import com.google.common.collect.Lists;
 import de.greenrobot.event.EventBus;
 import github.chenupt.dragtoplayout.DragTopLayout;
@@ -23,7 +27,7 @@ import it.gmariotti.cardslib.library.view.CardViewNative;
 import java.util.List;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
     private Toolbar mToolbar;
 
     private DragTopLayout dragTopLayout;
@@ -32,8 +36,9 @@ public class MainActivity extends ActionBarActivity {
     private PagerSlidingTabStrip mPagerSlidingTabStrip;
     private ViewPager mViewPager;
     private ModelPagerAdapter mModelPagerAdapter;
+    private ListView mDrawerListView;
 
-
+    private View headerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,20 +62,16 @@ public class MainActivity extends ActionBarActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolbar,R.string.drawer_open,R.string.drawer_close);
-        mDrawerToggle.syncState();
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        initDrawerLayout();
 
-        //Create a Card
-        Card card = new Card(this);
+//        //Create a Card
+//        Card card = new Card(this);
+//        //Add Header to card
+//        CardHeader cardHeader = new CardHeader(this);
 
-        //Create a CardHeader
-        CardHeader header = new CardHeader(this);
-        //Add Header to card
-        card.addCardHeader(header);
+        getCard().addCardHeader(getCardHeader());
         CardViewNative cardView = (CardViewNative) findViewById(R.id.carddemo);
-        cardView.setCard(card);
+        cardView.setCard(getCard());
 
 //        //Create menu icon
 //        ImageView icon = new ImageView(this); // Create an icon
@@ -90,10 +91,10 @@ public class MainActivity extends ActionBarActivity {
                 .listener(new DragTopLayout.SimplePanelListener() {
                     @Override
                     public void onSliding(float radio) {
-
+                        L.e("current radio is >>>>> "+radio);
                     }
                 }).setup(dragTopLayout);
-
+        dragTopLayout.setOverDrag(false);
         mPagerSlidingTabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         mViewPager = (ViewPager) findViewById(R.id.pager);
 
@@ -108,6 +109,19 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    private void initDrawerLayout(){
+        headerView = View.inflate(this,R.layout.view_image,null);
+        mDrawerListView = (ListView) findViewById(R.id.list_drawer_view);
+        String[] titles = getResources().getStringArray(R.array.list_title);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(MainActivity.this,R.layout.drawer_item_list,R.id.drawer_item_text,titles);
+        mDrawerListView.setAdapter(arrayAdapter);
+        mDrawerListView.addHeaderView(headerView);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,mToolbar,R.string.drawer_open,R.string.drawer_close);
+        mDrawerToggle.syncState();
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+    }
 
     private List<String> getTitles(){
         return Lists.newArrayList("快速拨号", "最近", "联系人");
@@ -115,18 +129,6 @@ public class MainActivity extends ActionBarActivity {
 
     public void onEvent(Boolean b){
         dragTopLayout.setTouchMode(b);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        EventBus.getDefault().register(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        EventBus.getDefault().unregister(this);
     }
 
     @Override
