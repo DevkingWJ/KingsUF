@@ -10,7 +10,7 @@ import org.apache.http.NameValuePair;
 
 import java.util.List;
 
-public class Request extends HttpUtils{
+public class Request extends HttpUtils {
 	public static RequestCache cache = new RequestCache();
 	
 	public Request(){

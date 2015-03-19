@@ -8,12 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.Checkable;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RatingBar;
-import android.widget.TextView;
-
+import android.widget.*;
 import com.devking.android.frame1.app.App;
 import com.lidroid.xutils.BitmapUtils;
 

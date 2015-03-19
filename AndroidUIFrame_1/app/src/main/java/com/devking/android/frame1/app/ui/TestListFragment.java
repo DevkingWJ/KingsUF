@@ -1,3 +1,19 @@
+/*
+ * Copyright 2015 chenupt
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * imitations under the License.
+ */
+
 package com.devking.android.frame1.app.ui;
 
 import android.os.Bundle;
@@ -9,22 +25,21 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ListView;
 import com.devking.android.frame1.app.R;
-import com.devking.android.frame1.app.multiplemodel.*;
 import com.devking.android.frame1.app.view.CustomView;
 import de.greenrobot.event.EventBus;
+import github.chenupt.multiplemodel.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This is Fragment in Pager
- * Created by Kings on 2015/2/15.
+ * Created by chenupt@gmail.com on 1/23/15.
+ * Description :
  */
 public class TestListFragment extends Fragment {
 
     private ListView listView;
-    private ModelListAdapter modelListAdapter;
-
+    private ModelListAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,19 +52,18 @@ public class TestListFragment extends Fragment {
         initView();
     }
 
-    private void initView() {
+    private void initView(){
+        listView = (ListView) getView().findViewById(R.id.list_view);
 
-        modelListAdapter = new ModelListAdapter(getActivity(), getModelManager());
-        listView = (ListView) getActivity().findViewById(R.id.list_view);
-        listView.setAdapter(modelListAdapter);
+        adapter = new ModelListAdapter(getActivity(), getModelManager());
+        listView.setAdapter(adapter);
 
-        modelListAdapter.setList(getList());
-        modelListAdapter.notifyDataSetChanged();
+        adapter.setList(getList());
+        adapter.notifyDataSetChanged();
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
-
                 if (listView.getChildCount() > 0) {
                     if (listView.getChildAt(0).getTop() >= 0) {
                         EventBus.getDefault().post(true);
@@ -64,22 +78,24 @@ public class TestListFragment extends Fragment {
                 if (listView.getChildCount() > 0) {
                     if (listView.getChildAt(0).getTop() >= 0) {
                         EventBus.getDefault().post(true);
+
                     } else {
                         EventBus.getDefault().post(false);
                     }
                 }
             }
         });
+
     }
 
     public ModelManager getModelManager() {
-        return ModelManagerBuilder.begin().addModel(CustomView.class,true).build(ModelManager.class);
+        return ModelManagerBuilder.begin().addModel(CustomView.class).build(ModelManager.class);
     }
 
     public List<ItemEntity> getList() {
         List<ItemEntity> resultList = new ArrayList<ItemEntity>();
         for (int i = 0; i < 20; i++) {
-            ItemEntityCreator.create("Test").setModelView(CustomView.class).attach(resultList);
+            ItemEntityCreator.create("").setModelView(CustomView.class).attach(resultList);
         }
         return resultList;
     }

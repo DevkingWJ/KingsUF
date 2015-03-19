@@ -6,7 +6,6 @@ import android.view.View;
 import com.devking.android.frame1.app.util.L;
 import com.devking.android.frame1.app.util.Request;
 import com.devking.android.frame1.app.util.T;
-import com.devking.android.frame1.app.util.ToolUtils;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.bitmap.core.BitmapSize;
@@ -14,6 +13,7 @@ import com.lidroid.xutils.bitmap.core.BitmapSize;
 import java.io.File;
 
 /**
+ * App
  * Created by Kings on 2015/3/4.
  */
 public class App extends Application{

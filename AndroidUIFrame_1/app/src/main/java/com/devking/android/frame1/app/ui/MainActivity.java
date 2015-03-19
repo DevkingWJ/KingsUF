@@ -3,25 +3,21 @@ package com.devking.android.frame1.app.ui;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 import com.astuetz.PagerSlidingTabStrip;
 import com.devking.android.frame1.app.R;
-import com.devking.android.frame1.app.multiplemodel.viewpager.ModelPagerAdapter;
-import com.devking.android.frame1.app.multiplemodel.viewpager.PagerModelManager;
 import com.devking.android.frame1.app.util.L;
-import com.github.siyamed.shapeimageview.CircularImageView;
-import com.github.siyamed.shapeimageview.ShapeImageView;
 import com.google.common.collect.Lists;
-import de.greenrobot.event.EventBus;
 import github.chenupt.dragtoplayout.DragTopLayout;
-import it.gmariotti.cardslib.library.internal.Card;
-import it.gmariotti.cardslib.library.internal.CardHeader;
+import github.chenupt.multiplemodel.viewpager.ModelPagerAdapter;
+import github.chenupt.multiplemodel.viewpager.PagerModelManager;
 import it.gmariotti.cardslib.library.view.CardViewNative;
 
 import java.util.List;
@@ -64,34 +60,16 @@ public class MainActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initDrawerLayout();
 
-//        //Create a Card
-//        Card card = new Card(this);
-//        //Add Header to card
-//        CardHeader cardHeader = new CardHeader(this);
-
         getCard().addCardHeader(getCardHeader());
         CardViewNative cardView = (CardViewNative) findViewById(R.id.carddemo);
         cardView.setCard(getCard());
-
-//        //Create menu icon
-//        ImageView icon = new ImageView(this); // Create an icon
-//        Resources res = getResources();
-//        Drawable imageDrawable = res.getDrawable(R.drawable.ic_action_dial);
-//        icon.setImageDrawable(imageDrawable);
-//        FloatingActionButton actionButton = new FloatingActionButton.Builder(this)
-//                .setContentView(icon)
-//                .setPosition(FloatingActionButton.POSITION_BOTTOM_CENTER)
-//                .setBackgroundDrawable(R.drawable.button_action_blue)
-//                .build();
-//        actionButton.offsetLeftAndRight(0);
-
         //Init DragTopLayout
         DragTopLayout.from(this)
                 .open()
                 .listener(new DragTopLayout.SimplePanelListener() {
                     @Override
                     public void onSliding(float radio) {
-                        L.e("current radio is >>>>> "+radio);
+                        L.e("current radio is >>>>> " + radio);
                     }
                 }).setup(dragTopLayout);
         dragTopLayout.setOverDrag(false);
@@ -137,7 +115,6 @@ public class MainActivity extends BaseActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

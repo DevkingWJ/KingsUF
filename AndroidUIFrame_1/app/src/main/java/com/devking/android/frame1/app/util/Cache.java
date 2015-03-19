@@ -2,10 +2,8 @@ package com.devking.android.frame1.app.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-
 import com.devking.android.frame1.app.App;
 import com.lidroid.xutils.BitmapUtils;
-
 
 import java.io.File;
 import java.io.FileInputStream;

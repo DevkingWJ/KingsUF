@@ -1,5 +1,26 @@
 package com.devking.android.frame1.app.util;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.Environment;
+import android.view.*;
+import android.view.WindowManager.LayoutParams;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+import com.devking.android.frame1.app.App;
+import org.apache.http.conn.util.InetAddressUtils;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,32 +35,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.Random;
-
-import com.devking.android.frame1.app.App;
-import org.apache.http.conn.util.InetAddressUtils;
-
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
-import android.os.Environment;
-import android.view.Display;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 /**
  * Tools封装

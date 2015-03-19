@@ -10,7 +10,7 @@ import it.gmariotti.cardslib.library.internal.CardHeader;
  * Base Activity extends ActionbarActivity
  * Created by Kings on 2015/3/6.
  */
-public class BaseActivity extends ActionBarActivity{
+public class BaseActivity extends ActionBarActivity {
 
     private Card card;
     private CardHeader cardHeader;

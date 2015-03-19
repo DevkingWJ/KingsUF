@@ -73,9 +73,7 @@
                         android:textColor="@color/white"
                         app:pstsIndicatorColor="@color/white"
                         app:pstsShouldExpand="true"
-                        app:pstsIndicatorHeight="4dp">
-
-                    </com.astuetz.PagerSlidingTabStrip>
+                        app:pstsIndicatorHeight="4dp"/>
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/pager"
@@ -86,7 +84,6 @@
                     </android.support.v4.view.ViewPager>
                 </LinearLayout>
             </github.chenupt.dragtoplayout.DragTopLayout>
-
             <LinearLayout
                 android:id="@+id/drawer_view"
                 android:layout_width="match_parent"
